@@ -1,44 +1,42 @@
 #include <iostream>
-#include <cstring>
+#include <string>
 using namespace std;
 
-int palindrome(char mystring[])
+int palindrome(string mystring)
 {
-    int panjang = strlen(mystring);
-    int status = 1;
-    int i;
+    int i,st,pj;
 
-    for(i=0; i<panjang/2; i++)
+    pj = mystring.size();
+    st = 1;
+    for(i=0; i<pj/2;i++)
     {
-        if(mystring[i] != mystring[panjang-1-i])
+        if(mystring[i]!=mystring[pj-i-1])
         {
-            status = 0;
+            st = 0;
             break;
         }
     }
-    return status;
+    return st;
 }
 
 int main()
 {
-    char string1[] = "Cek Palindrome";
-    char string2[] = "okodoko";
-    char string3[] = "katak";
+    string string1 = "siapa";
+    string string2 = "okodoko";
+    string string3;
+    int cek;
 
-    int status;
+    cout << "Kata: ";
+    cin >> string3;
+    cek = palindrome(string3);
 
-    status = palindrome(string1);
-    if(status==1) cout << string1 <<" -> Palindrome" << endl;
-    else cout << string1 << " -> Bukan Palindrome" << endl;
-
-    status = palindrome(string2);
-    if(status==1) cout << string2 << " -> Palindrome" << endl;
-    else cout << string1 << " -> Bukan Palindrome" << endl;
-
-    status = palindrome(string3);
-    if(status==1) cout << string3 << " -> Palindrome" << endl;
-    else cout << string1 << " -> Bukan Palindrome" << endl;
+    if(cek==1)
+    {
+        cout << "Palindrome";
+    }
+    else
+    {
+        cout << "Bukan Palindrome";
+    }
 }
-
-
 

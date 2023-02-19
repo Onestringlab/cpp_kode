@@ -1,30 +1,37 @@
 #include <iostream>
 using namespace std;
 
-int muncul(int myarray[], int cari, int panjang)
+int muncul(int myarray[], int n, int p)
 {
-    int i,k;
-    k = 0;
-    for(i=0; i<panjang; i++)
+    int i,j;
+    j = 0;
+    for(i = 0; i < p ; i++)
     {
-        if(myarray[i] == cari)
+        cout << myarray[i] << " ";
+        if(n==myarray[i])
         {
-            k++;
+            // cout << "Ditemukan bilangan " << n << endl;
+            j++;
         }
     }
-    return k;
+    cout << endl;
+    return j;
 }
 
 int main()
 {
-    int myarray[] = {9,8,7,6,5,6,8,6,8,6};
-    int c,k;
-    int panjang = sizeof(myarray)/sizeof(myarray[0]);
+    int myarray[] = {9,8,7,6,5,6,8,6,8};
+    int n,m,p;
 
-    cout <<"Cari Angka: ";
-    cin >> c;
+    p = sizeof(myarray)/sizeof(myarray[0]);
 
-    k = muncul(myarray, c, panjang);
+    cout <<"Cari bilangan: ";
+    cin >> n;
 
-    cout <<"Angka "<< c <<" muncul "<< k << " kali";
+    m = muncul(myarray, n, p);
+
+    cout <<"Kemunculan bilangan " << n
+            << " sebanyak "<< m << " kali";
+
+    return 0;
 }
