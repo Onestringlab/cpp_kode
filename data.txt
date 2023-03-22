@@ -1,0 +1,7 @@
+Baris Pertama
+Baris Kedua
+Baris Ketiga
+Baris Keempat
+Baris Kelima
+Baris Keenam
+Baris Ketujuh
